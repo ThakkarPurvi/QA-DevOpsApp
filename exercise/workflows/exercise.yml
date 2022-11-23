@@ -1,6 +1,6 @@
 name: Git Actions Demo
-    - description:'Hello Everyone',
-    - default:'Good Afternoon',
+    - description:'Hello Everyone'
+    - default:'Good Afternoon'
     - required:true
 
 on: [push]
