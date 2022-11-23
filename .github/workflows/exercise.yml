@@ -72,5 +72,5 @@ jobs:
       - run: echo "GitHub"
       - run: echo "Hello $name"
       - run: echo $app_name
-      - run: echo"{{secrets.SECRET_PASSWORD}}"
+      - run: echo "${{secrets.SECRET_PASSWORD}}"
 
