@@ -45,14 +45,14 @@ jobs:
       - run: sleep 10
       - run: echo "Pooh"
       - run: touch sum.py
-      - run: echo "no = list(map(int, input().split()))
-          def no_sum():\
-          print(no)
-          res = 0
-          for i in no:\
-          res = res + i
-          print(res)
-          no_sum()" >> sum.py
+#      - run: echo "no = list(map(int, input().split()))
+#          def no_sum():\
+#          print(no)
+#          res = 0
+#          for i in no:\
+#          res = res + i
+#          print(res)
+#          no_sum()" >> sum.py
       - run: cat sum.py
       - run: ls -a
       - run: pwd
@@ -65,12 +65,12 @@ jobs:
     - run: ./script.sh # Running our script
 
   environment_variable_job:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     env:
       name: Purvi
     steps:
       - run: echo "GitHub"
-      - rum: echo "Hello $name"
-      - rum: echo $app_name
+      - run: echo "Hello $name"
+      - run: echo $app_name
       - run: echo"{{secrets.SECRET_PASSWORD}}"
 
