@@ -1,0 +1,37 @@
+name: Git Actions Demo
+    - description:'Hello Everyone',
+    - default:'Good Afternoon',
+    - required:true
+
+on: [push]
+
+
+jobs:
+  actions_demo:
+    runs-on: ubuntu-latest
+    steps:
+    - run: sleep 10
+    - run: echo "Purvi"
+    - run: touch github.txt
+    - run: echo "github
+                - users:- 90 million
+                - launched:- April_10_2008
+                - written_in:- Ruby, JavaScript, Go, C
+                - parent_company:- Microsoft
+                - employees:- 2500
+                - revenue:- $1 Billion
+                - hq:- SanFrancisco, California, US
+                - type:- Collaborative Version control" >> github.txt
+    - run: cat github.txt
+    - run: ls -a
+    - run: pwd
+    - run: echo "$USER"
+    - run: git clone https://github.com/ThakkarPurvi/QA-DevOpsApp
+    - run: cat QA-DevOpsApp/README.md
+
+  better_action:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3 # Checking out and using the repo assigned to this workflow
+    - run: chmod +x script.sh # Granting permission access to our script
+    - run: ./script.sh # Running our script
