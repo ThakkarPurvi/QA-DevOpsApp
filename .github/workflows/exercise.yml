@@ -45,14 +45,17 @@ jobs:
       - run: sleep 10
       - run: echo "Pooh"
       - run: touch sum.py
-#      - run: echo "no = list(map(int, input().split()))
-#          def no_sum():\
-#          print(no)
-#          res = 0
-#          for i in no:\
-#          res = res + i
-#          print(res)
-#          no_sum()" >> sum.py
+      - run: |
+          cat >>sum.py <<EOF
+          no = list(map(int, input().split()))
+          def no_sum():
+            print(no)
+            res = 0
+            for i in no:
+              res = res + i
+              print(res)
+          no_sum()
+          EOF
       - run: cat sum.py
       - run: ls -a
       - run: pwd
