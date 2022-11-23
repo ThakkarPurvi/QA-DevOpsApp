@@ -1,0 +1,17 @@
+name: Git Actions Demo
+description: 'Hello Everyone',
+default: 'Good Afternoon',
+required: true
+
+on: [push]
+
+    
+jobs:
+  actions_demo:
+    runs-on: ubuntu-latest  
+    steps:
+    - run: sleep 10
+    - run: echo "Purvi"
+    - run: echo "Hello ${{ github.event.inputs.Purvi }}"
+    - run: ls -a
+    - run: pwd
