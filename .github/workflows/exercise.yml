@@ -5,6 +5,8 @@ name: Git Actions Demo
 
 on: [push]
 
+env:
+  app_name: C00l_4PP.exe
 
 jobs:
   actions_demo:
@@ -35,14 +37,40 @@ jobs:
     - uses: actions/checkout@v3 # Checking out and using the repo assigned to this workflow
     - run: chmod +x script.sh # Granting permission access to our script
     - run: ./script.sh # Running our script
-    - run: touch sum.py
-    - run: echo "no = list(map(int, input().split()))
-        def no_sum():\
+    - run: echo $app_name
+
+  exercise_action:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 10
+      - run: echo "Pooh"
+      - run: touch sum.py
+      - run: echo "no = list(map(int, input().split()))
+          def no_sum():\
           print(no)
           res = 0
           for i in no:\
-            res = res + i
-            print(res)
-        no_sum()"
+          res = res + i
+          print(res)
+          no_sum()" >> sum.py
+      - run: cat sum.py
+      - run: ls -a
+      - run: pwd
 
+  check_action:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3 # Checking out and using the repo assigned to this workflow
+    - run: chmod +x script.sh # Granting permission access to our script
+    - run: ./script.sh # Running our script
+
+  environment_variable_job:
+    runs_on: ubuntu-latest
+    env:
+      name: Purvi
+    steps:
+      - run: echo "GitHub"
+      - rum: echo "Hello $name"
+      - rum: echo $app_name
+      - run: echo"{{secrets.SECRET_PASSWORD}}"
 
