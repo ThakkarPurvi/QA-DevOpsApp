@@ -36,4 +36,13 @@ jobs:
     - run: chmod +x script.sh # Granting permission access to our script
     - run: ./script.sh # Running our script
     - run: touch sum.py
+    - run: echo "no = list(map(int, input().split()))
+        def no_sum():\
+          print(no)
+          res = 0
+          for i in no:\
+            res = res + i
+            print(res)
+        no_sum()"
+
 
